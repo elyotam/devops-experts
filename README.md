@@ -10,7 +10,7 @@
 <p align="center">
   <a href="https://devopsexperts.co.il/"><img alt="מכללה" src="https://img.shields.io/badge/%D7%9E%D7%9B%D7%9C%D7%9C%D7%94-DevOps%20Experts-f47425"></a>
   <img alt="מחזור" src="https://img.shields.io/badge/%D7%9E%D7%97%D7%96%D7%95%D7%A8-1125-333">
-  <img alt="שיעורים" src="https://img.shields.io/badge/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99%D7%9D-13-333">
+  <img alt="שיעורים" src="https://img.shields.io/badge/%D7%A9%D7%99%D7%A2%D7%95%D7%A8%D7%99%D7%9D-14-333">
   <img alt="ריפו פרטי" src="https://img.shields.io/badge/%D7%A8%D7%99%D7%A4%D7%95-%D7%A4%D7%A8%D7%98%D7%99-555">
 </p>
 
