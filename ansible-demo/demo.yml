@@ -1,0 +1,27 @@
+---
+- hosts: servers
+  handlers:
+
+  - name: user_handler
+    debug:
+      msg: "User was modified!"
+
+  tasks:
+  - name: Add User elim
+    user:
+      name: elim
+      comment: "Eli Mutchnik"
+      shell: /bin/bash
+    notify: user_handler
+
+  - name: Register statement
+    shell: ls -l 
+    register: result
+    ignore_errors: yes
+
+  - name: If statement
+    user:
+      name: moshe
+      comment: "Moshe Moshe"
+      shell: /bin/bash
+    when: result.rc != 0
