@@ -1,0 +1,45 @@
+name: Show Repository
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    inputs:
+      debug_mode:
+        description: 'Enable custom message?'
+        required: false
+        type: boolean
+        default: true
+      custom_message:
+        description: 'A message to print in the logs'
+        required: false
+        type: string
+        default: 'Hello from the manual trigger!'
+
+jobs:
+  show_repo:
+    runs-on: ubuntu-latest
+    container: python:3.13
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: show files
+        run: |
+          echo "=== Workspace Info ==="
+          echo "Current working directory: $(pwd)"
+          echo "Listing all files with details:"
+          ls -ltr
+          
+          echo "=== System Info ==="
+          echo "Current Date/Time: $(date)"
+          echo "Container Hostname: $(hostname)"
+          echo "Operating System Details:"
+          cat /etc/os-release | grep PRETTY_NAME
+          echo "Current User: $(whoami)"
+
+      - name: Print Debug Message
+        if: ${{ inputs.debug_mode == true }}
+        run: echo "Debug Message -> ${{ inputs.custom_message }}"
